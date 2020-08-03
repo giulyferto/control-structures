@@ -12,7 +12,7 @@ public class Main {
         String firstName, secondName, thirdName;
         int firstAge, secondAge, thirdAge;
         String youngestName;
-        int youngerAge;
+        int youngestAge;
 
         //Se habilita el uso del teclado
         Scanner keyboard = new Scanner(System.in);
@@ -21,30 +21,38 @@ public class Main {
         System.out.print("Ingrese nombre y edad: ");
         firstName = keyboard.nextLine();
         firstAge = keyboard.nextInt();
+        keyboard.nextLine();
 
         System.out.print("Ingrese nombre y edad: ");
         secondName = keyboard.nextLine();
         secondAge = keyboard.nextInt();
+        keyboard.nextLine();
 
-        System.out.println("Ingrese nombre y edad: ");
+        System.out.print("Ingrese nombre y edad: ");
         thirdName = keyboard.nextLine();
         thirdAge = keyboard.nextInt();
+        keyboard.nextLine();
 
         //Se determina quien es el mas chico
 
-        if (firstAge > secondAge) {
-            youngestName = firstName;
-            youngerAge = firstAge;
-        } else  if (secondAge > thirdAge) {
+        if (firstAge < secondAge) {
+            if (firstAge < thirdAge) {
+                youngestName = firstName;
+                youngestAge = firstAge;
+            } else {
+                youngestName = thirdName;
+                youngestAge = thirdAge;
+            }
+        } else if (secondAge < thirdAge) {
             youngestName = secondName;
-            youngerAge = secondAge;
+            youngestAge = secondAge;
         } else {
             youngestName = thirdName;
-            youngerAge = thirdAge;
+            youngestAge = thirdAge;
         }
 
         //Se muestra el resultado
-        System.out.println("La persona mas joven es: " + youngestName + " "+ youngerAge);
+        System.out.println("La persona mas joven es: " + youngestName + " " + youngestAge);
 
     }
 }
