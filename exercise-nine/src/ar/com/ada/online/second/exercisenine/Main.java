@@ -49,27 +49,27 @@ public class Main {
         } else {
             coveragePrice = 950;
         }
-        if (alcohol == "si") {
+        if (alcohol.equals("si")) {
             taxAlcohol = 0.10;
         } else  {
             taxAlcohol = 0;
         }
-        if (glasses == "si") {
+        if (glasses.equals("si")) {
             taxGlasses = 0.05;
         } else {
             taxGlasses = 0;
         }
-        if (disease == "si") {
+        if (disease.equals("si")) {
             taxDisease = 0.05;
         } else {
             taxDisease = 0;
         }
-        if (overAge =="si") {
+        if (overAge.equals("si")) {
             taxOverAge = 0.20;
         } else {
             taxOverAge = 0;
         }
-        if ((alcohol== "no") && (glasses == "no" ) && (disease == "no") && (overAge == "no")) {
+        if ((alcohol.equals("no")) && (glasses.equals("no")) && (disease.equals("no")) && (overAge.equals("no"))) {
             taxOtherCase = 0.10;
         } else {
             taxOtherCase = 0;
@@ -84,5 +84,6 @@ public class Main {
         //Se muestra el resultado
         System.out.println("Su poliza va a tener un precio de: $" + finalPrice);
         System.out.println(finalTax);
+
     }
 }
