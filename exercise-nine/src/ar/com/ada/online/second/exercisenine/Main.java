@@ -1,4 +1,5 @@
 package ar.com.ada.online.second.exercisenine;
+
 import java.util.Scanner;
 
 public class Main {
@@ -20,7 +21,11 @@ public class Main {
         double finalTax;
         double finalPrice;
         String alcohol, glasses, disease, overAge;
-        double taxAlcohol, taxGlasses, taxDisease, taxOverAge, taxOtherCase;
+        double taxAlcohol = 0;
+        double taxGlasses = 0;
+        double taxDisease = 0;
+        double taxOverAge = 0;
+        double taxOtherCase = 0;
 
         //Se habilita el uso del teclado
         Scanner keyboard = new Scanner(System.in);
@@ -30,8 +35,8 @@ public class Main {
         coverage = keyboard.next().charAt(0);
 
         System.out.print("Responda si o no: Usted bebe alcohol?: ");
-        alcohol = keyboard.nextLine();
         keyboard.nextLine();
+        alcohol = keyboard.nextLine();
 
         System.out.print("Responda si o no: Usted utiliza lentes?: ");
         glasses = keyboard.nextLine();
@@ -49,30 +54,25 @@ public class Main {
         } else {
             coveragePrice = 950;
         }
+
         if (alcohol.equals("si")) {
             taxAlcohol = 0.10;
-        } else  {
-            taxAlcohol = 0;
         }
+
         if (glasses.equals("si")) {
             taxGlasses = 0.05;
-        } else {
-            taxGlasses = 0;
         }
+
         if (disease.equals("si")) {
             taxDisease = 0.05;
-        } else {
-            taxDisease = 0;
         }
+
         if (overAge.equals("si")) {
             taxOverAge = 0.20;
-        } else {
-            taxOverAge = 0;
         }
+
         if ((alcohol.equals("no")) && (glasses.equals("no")) && (disease.equals("no")) && (overAge.equals("no"))) {
             taxOtherCase = 0.10;
-        } else {
-            taxOtherCase = 0;
         }
 
         //Se suman los recargos
@@ -82,8 +82,7 @@ public class Main {
         finalPrice = coveragePrice + (coveragePrice * finalTax);
 
         //Se muestra el resultado
-        System.out.println("Su poliza va a tener un precio de: $" + finalPrice);
-        System.out.println(finalTax);
+        System.out.println("\nSu poliza va a tener un precio de: $" + finalPrice);
 
     }
 }
